@@ -9,14 +9,9 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 from collections import namedtuple, deque
 
-# TODO - Initialize environment and set possible actions, states, rewards
-# TODO - Create replay memory consisting of state, action, reward, return state
-# TODO - Initialize Neural Net to take state as input and return possible actions as output
-# TODO - Loop through N episodes of the game, each time taking either random action or max estimated Q value
-# based on exploration rate. Play that action and record the state, action, reward, new state in our 
-# replay memory. Randomly sample mini-batch from the replay memory and set the target value y to either the 
-# reward value for done state or best guess based on current estimation of Q(s,a) = (r + dis * max(Q(s', a'))).
-# To do this, we make a separate target model that is updated with the weights of the training model every M steps
+# TODO - Add mask to accurately determine final state
+# TODO - Add play() function to play through game and get average reward
+# TODO - Plot results for different hyperparameters
 
 ACTION = {
     0 : 'Left',
