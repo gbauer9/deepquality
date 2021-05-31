@@ -121,7 +121,7 @@ def learn(model):
     n_state_b = torch.cat(n_state_b)
 
     final_mask = reward_b == -1.
-    non_final_mask = reward_b != -1.
+    non_final_mask = ~final_mask
 
     q_cur = policy(state_b).gather(1, action_b)
     q_next = target(n_state_b).detach().max(1)[0].reshape(-1, 1)
